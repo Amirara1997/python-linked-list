@@ -98,22 +98,55 @@ class linkedList :
                 temp_idx+=1    
 
 
-studencode = input("input studens code : ")
 
-my_list = linkedList()
-my_list.append(studencode)
-my_list.display()
-studencode2 = input("input studens code : ")
-my_list.append(studencode2)
-my_list.display()
-studencode3 = input("input studens code : ")
-my_list.append(studencode3)
-my_list.display()
-my_list.erase(studencode2)
-my_list.display()
+units = {
+    1 : "riazi 1",
+    2 : "fizik 1 ",
+    3 : "andishe 1",
+    4 : "mabani barnameh nevisi",
+    5 : "varzeh 1"
+}
 
 
 
+
+blist = ["amirreza",9721973128]
+
+
+# with open('test.txt','r') as file :
+#    blist= json.load(file) 
+
+
+
+studenlists = linkedList()
+studenlists.append(blist)
+
+
+
+print("welcome to system \n please choice blews numbers :")
+print("1- show student\n2- add studens\n3-selecting a univerciry studens\n4-login\n")
+m = input("number ...")
+if m == 1 :
+    print("show studens page ")
+    f = open("test.txt","r")
+    print(f.read())
+elif m == 2 :
+    print("add student")
+    n = input("enter studen code:")
+    d = str(input("enter studen name...(name must be enterd in '') :"))
+    mlist= [n,d]
+    studenlists.append(mlist)
+    with open ('test.txt','a') as filewrite :
+        json.dump(mlist,filewrite)
+    print("done")
+elif m == 3 :
+    print("selecting a univerciry studens")
+    print(units)
+elif m==4:
+    print("enter your studen code \n")
+    w = input("code:")
+else :
+    print("Error : please enter exsted numbers")
 
 
 
